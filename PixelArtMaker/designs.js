@@ -5,7 +5,8 @@ const width = document.querySelector('#inputWidth');
 // When size is submitted by the user, call makeGrid()
 const form = document.getElementById('sizePicker');
 
-function makeGrid() {
+function makeGrid(event) {
+  event.preventDefault();
   const table = document.getElementById('pixelCanvas');
   table.setAttribute("style", "color:red; border: 1px solid blue;");
   for (let r=0; r<height.value; r++){

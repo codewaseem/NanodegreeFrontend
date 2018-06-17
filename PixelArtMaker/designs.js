@@ -1,3 +1,4 @@
+// Select color input
 const colorPicker = document.querySelector('#colorPicker');
 // Select size input
 const height = document.querySelector('#inputHeight');
@@ -7,7 +8,10 @@ const form = document.getElementById('sizePicker');
 
 function makeGrid() {
   const table = document.getElementById('pixelCanvas');
-  table.setAttribute("style", "color:red; border: 1px solid blue;");
+  const previousCells = document.querySelectorAll('tr');
+  previousCells.forEach(function(item){
+      item.remove();
+  });
   for (let r=0; r<height.value; r++){
     const row = document.createElement('tr');
     table.appendChild(row);
